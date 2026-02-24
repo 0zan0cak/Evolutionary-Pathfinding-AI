@@ -8,7 +8,7 @@ A smart agent simulation built entirely from scratch in Java, implementing a **G
 
 ## The Simulation in Action
 
-_(Insert your GIF here! Show Generation 1 vs Generation 30)_
+![Simulation Demo](demo.gif)
 
 ## How the Genetic Algorithm Works
 
