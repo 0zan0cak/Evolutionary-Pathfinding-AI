@@ -43,12 +43,44 @@ public class Main extends JPanel {
         //Agents
         g.setColor(new Color(255, 255, 255, 150));
         for (Agent a : population.agents) {
-            g.fillOval((int) a.location.x, (int) a.location.y, 8, 8);
+            //g.fillOval((int) a.location.x, (int) a.location.y, 8, 8);
+
+            //Polygon
+            /* int r = (int) Math.sqrt(3) * 9;
+            int[] xPoints = {
+                (int) a.location.x, // Üst
+                (int) (a.location.x - r * Math.sqrt(3) / 2), // Sol Alt
+                (int) (a.location.x + r * Math.sqrt(3) / 2) // Sağ Alt
+            };
+            int[] yPoints = {
+                (int) (a.location.y + r), // Üst
+                (int) (a.location.y - r * 0.5), // Sol Alt
+                (int) (a.location.y - r * 0.5) // Sağ Alt
+            };
+            g.fillPolygon(xPoints, yPoints, 3); */
+            //2d Polygon
+            Graphics2D g2d = (Graphics2D) g.create();
+
+            double angle = Math.atan2(a.velocity.y, a.velocity.x);
+
+            g2d.translate(a.location.x, a.location.y);
+            g2d.rotate(angle);
+
+            int r = 6;
+            int[] xPoints = {r * 2, -r, -r}; // Sivri uç sağda (r*2), arka iki köşe solda (-r)
+            int[] yPoints = {0, -r, r};      // Sivri uç ortada (0), arka köşeler üst ve altta
+
+            g2d.fillPolygon(xPoints, yPoints, 3);
+            g2d.dispose();
         }
 
         //Obstacle
         g.setColor(Color.BLUE);
         g.fillRect(200, 400, 400, 20);
+
+        //Obstacle
+        g.setColor(Color.GREEN);
+        g.fillRect(580, 500, 20, 100);
 
         g.setColor(Color.WHITE);
         g.drawString("Generation: " + population.generations, 20, 30);

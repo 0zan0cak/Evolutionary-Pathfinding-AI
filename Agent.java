@@ -38,6 +38,11 @@ public class Agent {
             crashed = true;
         }
 
+        //Wall - Obstacle
+        if (location.x > 580 && location.x < 600 && location.y > 500 && location.y < 600) {
+            crashed = true;
+        }
+
         if (!complated && !crashed && geneCounter < dna.lifespan) {
             applyForce(dna.genes[geneCounter]);
             geneCounter++;
