@@ -34,5 +34,5 @@ Since this project has absolutely zero external dependencies, running it is incr
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/yourusername/Evolutionary-Pathfinding-AI.git](https://github.com/yourusername/Evolutionary-Pathfinding-AI.git)
+   git clone [https://github.com/0zan0cak/Evolutionary-Pathfinding-AI.git](https://github.com/0zan0cak/Evolutionary-Pathfinding-AI.git)
    ```
